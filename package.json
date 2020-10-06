@@ -1,0 +1,14 @@
+{
+  "name": "wavr-discord-bot",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.ts",
+  "scripts": {
+    "start": "node bot.ts"
+  },
+  "dependencies": {
+    "discord.js": "12.3.1"
+  },
+  "author": "Zane Helton"
+}
