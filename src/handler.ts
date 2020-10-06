@@ -7,7 +7,7 @@ export const handleMessage = (message: Message) => {
   const trimmedMessage = message.content.trim()
 
   // we should always embed links
-  if (message.content.indexOf('wavr.me/pack') > 0) {
+  if (message.content.indexOf('wavr.me/pack') >= 0) {
     return handlePack(message)
   }
 
