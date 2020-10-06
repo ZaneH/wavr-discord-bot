@@ -5,10 +5,20 @@
   "description": "",
   "main": "bot.ts",
   "scripts": {
-    "start": "node bot.ts"
+    "start": "ts-node src/bot",
+    "dev": "ts-node-dev src/bot"
   },
   "dependencies": {
-    "discord.js": "12.3.1"
+    "discord.js": "12.3.1",
+    "dotenv": "^8.2.0",
+    "graphql-request": "3.1.0",
+    "graphql": "^15.3.0",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.3"
   },
-  "author": "Zane Helton"
+  "author": "Zane Helton",
+  "devDependencies": {
+    "@types/node": "^14.11.5",
+    "ts-node-dev": "^1.0.0-pre.63"
+  }
 }
