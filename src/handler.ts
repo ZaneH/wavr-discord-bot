@@ -50,6 +50,8 @@ const handlePack = async (message: Message) => {
   const productId = message.content.split('/').pop()
   const product = await getProduct({ id: productId })
 
+  console.log(product)
+
   const embed = new Discord.MessageEmbed({
     title: product.name,
     description: truncateString(noHTML(product.description) ?? '', 35),
@@ -58,12 +60,6 @@ const handlePack = async (message: Message) => {
     footer: {
       iconURL: 'https://wavr.me/img/w-sm-125.png',
       text: 'Wavr bot',
-    },
-    thumbnail: {
-      url: `${
-        product.images?.[0] ??
-        'https://wavr.s3.us-east-2.amazonaws.com/!blank+thumbnail'
-      }`,
     },
     image: {
       url: `${
@@ -82,15 +78,18 @@ const handlePack = async (message: Message) => {
     fields: [
       {
         name: 'Price:',
-        value: `$${
+        value: `${
           product.onSale
-            ? `On sale: ${product.salePrice.toFixed(2)}`
-            : product.amount.toFixed(2)
+            ? `On sale: $${product.salePrice.toFixed(2)}`
+            : `${product.amount.toFixed(2)}`
         }`,
       },
       {
         name: 'Tags:',
-        value: product.tags?.map((tag) => tag.name).join(', '),
+        value:
+          product.tags?.length > 0
+            ? product.tags?.map((tag) => tag.name).join(', ')
+            : '(none)',
       },
       {
         name: 'Sold by:',
