@@ -81,7 +81,7 @@ const handlePack = async (message: Message) => {
         value: `${
           product.onSale
             ? `On sale: $${product.salePrice.toFixed(2)}`
-            : `${product.amount.toFixed(2)}`
+            : `$${product.amount.toFixed(2)}`
         }`,
       },
       {
