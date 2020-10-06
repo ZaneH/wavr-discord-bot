@@ -16,12 +16,12 @@
     "graphql": "^15.3.0",
     "graphql-request": "3.1.0",
     "ts-node": "^9.0.0",
-    "typescript": "^4.0.3"
+    "typescript": "^4.0.3",
+    "nodemon": "^2.0.4"
   },
   "author": "Zane Helton",
   "devDependencies": {
     "@types/node": "^14.11.5",
-    "nodemon": "^2.0.4",
     "ts-node-dev": "^1.0.0-pre.63"
   }
 }
