@@ -5,10 +5,9 @@
   "description": "",
   "main": "bot.ts",
   "scripts": {
-    "dev": "nodemon dist/bot.js",
+    "dev": "ts-node-dev --respawn --transpile-only src/bot",
     "start": "node dist/bot.js",
-    "postinstall": "tsc",
-    "watch-ts": "tsc -w"
+    "postinstall": "tsc"
   },
   "dependencies": {
     "discord.js": "12.3.1",
