@@ -63,16 +63,14 @@ const handlePack = async (message: Message) => {
     },
     image: {
       url: `${
-        product.images?.[0] ??
-        'https://wavr.s3.us-east-2.amazonaws.com/!blank+thumbnail'
+        product.images?.[0] ?? 'https://wavr.me/img/blank-thumbnail.png'
       }`,
     },
     author: {
       name: `${product.owner?.displayName ?? product.owner?.username}`,
       url: `https://wavr.me/user/${product.owner?.username}`,
       iconURL: `${
-        product.owner?.avatarURL ??
-        'https://wavr.s3.us-east-2.amazonaws.com/!blank+thumbnail'
+        product.owner?.avatarURL ?? 'https://wavr.me/img/blank-thumbnail.png'
       }`,
     },
     fields: [
