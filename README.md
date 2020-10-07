@@ -8,5 +8,9 @@ Wavr is a digital marketplace for creators to upload and sell their content.<br 
 ## Demo
 <img src="https://i.imgur.com/UMQvAEx.png" width="40%" />
 
+## Run
+- `npm install; npm run dev` for development
+- `npm install; npm run start` for production
+
 ## Invite Link
 If you want to invite Wavr bot to your own server <a href="https://discord.com/oauth2/authorize?client_id=762914158500511775&scope=bot&permissions=329728">Click here</a>
