@@ -6,6 +6,14 @@ const client = new Discord.Client()
 
 client.on('ready', () => {
   console.log('🚀 Started Wavr bot...')
+  client.user.setPresence({
+    status: 'online',
+    activity: {
+      name: 'with money',
+      type: 'PLAYING',
+      url: 'https://wavr.me/',
+    },
+  })
 })
 
 client.on('message', (message) => {
