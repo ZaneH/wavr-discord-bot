@@ -24,7 +24,7 @@ export const handleMessage = (message: Message) => {
 const handleVote = (message: Message) => {
   const embed = new Discord.MessageEmbed({
     title: 'Vote for Wavr bot',
-    description: '(Coming soon) Earn Ad Tokens for each vote!',
+    description: 'Earn Ad Tokens for each vote!',
     color: 14035221,
     footer: {
       iconURL: 'https://wavr.me/img/w-sm-125.png',
