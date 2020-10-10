@@ -52,6 +52,7 @@ const handlePack = async (message: Message) => {
 
   const product = await getProduct({ id: productId })
 
+  const priceWithSign = `$${product.salePrice.toFixed(2)}`
   const embed = new Discord.MessageEmbed({
     title: product.name,
     description: truncateString(noHTML(product.description) ?? '', 35),
@@ -78,10 +79,12 @@ const handlePack = async (message: Message) => {
         name: 'Price:',
         value: `${
           product.onSale
-            ? `~~$${product.amount.toFixed(2)}~~\nOn sale: $${
-                product.salePrice === 0 ? 'Free' : product.salePrice.toFixed(2)
+            ? `~~$${product.amount.toFixed(2)}~~\nOn sale: ${
+                product.salePrice === 0 ? 'Free' : priceWithSign
               }`
-            : `$${product.amount === 0 ? 'Free' : product.amount.toFixed(2)}`
+            : product.amount === 0
+            ? 'Free'
+            : `$${product.amount.toFixed(2)}`
         }`,
       },
       {
