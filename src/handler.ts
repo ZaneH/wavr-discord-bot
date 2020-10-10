@@ -52,10 +52,10 @@ const handlePack = async (message: Message) => {
 
   const product = await getProduct({ id: productId })
 
-  const priceWithSign = `$${product.salePrice.toFixed(2)}`
+  const salePriceWithSign = `$${product.salePrice.toFixed(2)}`
   const embed = new Discord.MessageEmbed({
     title: product.name,
-    description: truncateString(noHTML(product.description) ?? '', 35),
+    description: truncateString(noHTML(product.description) ?? '', 65),
     url: `https://wavr.me/pack/${productId}`,
     color: 14035221,
     footer: {
@@ -80,7 +80,7 @@ const handlePack = async (message: Message) => {
         value: `${
           product.onSale
             ? `~~$${product.amount.toFixed(2)}~~\nOn sale: ${
-                product.salePrice === 0 ? 'Free' : priceWithSign
+                product.salePrice === 0 ? 'Free' : salePriceWithSign
               }`
             : product.amount === 0
             ? 'Free'
