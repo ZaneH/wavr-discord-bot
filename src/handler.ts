@@ -33,7 +33,8 @@ const handleVote = (message: Message) => {
     fields: [
       {
         name: 'Earn 0.05 Ad Tokens every 12 hours',
-        value: '[top.gg](https://top.gg/servers/744086647875960853)',
+        value:
+          '[top.gg](https://top.gg/servers/744086647875960853)\n[DiscordServers](https://discordservers.com/bump/744086647875960853)',
       },
       {
         name: 'Earn 0.075 Ad Tokens every 24 hours',
