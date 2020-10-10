@@ -3,6 +3,8 @@ import { Message, MessageEmbed } from 'discord.js'
 import { getProduct } from './api'
 import { noHTML, truncateString } from './utils'
 
+const WAVR_EMOJI = '764397755828535306'
+
 export const handleMessage = (message: Message) => {
   const trimmedMessage = message.content.trim()
 
@@ -19,6 +21,35 @@ export const handleMessage = (message: Message) => {
   if (trimmedMessage === 'wavr vote') {
     return handleVote(message)
   }
+
+  if (trimmedMessage === 'wavr help') {
+    return handleHelp(message)
+  }
+}
+
+const handleHelp = (message: Message) => {
+  const embed = new Discord.MessageEmbed({
+    title: 'Wavr bot Help',
+    description: 'A companion bot for Wavr.me',
+    color: 14035221,
+    footer: {
+      iconURL: 'https://wavr.me/img/w-sm-125.png',
+      text: 'Wavr bot',
+    },
+    fields: [
+      {
+        name: 'Commands',
+        value:
+          '- `wavr help` will display this message\n- `wavr vote` will show you where to vote',
+      },
+      {
+        name: 'Functions',
+        value: 'Any product URL from Wavr will automatically get an embed',
+      },
+    ],
+  })
+
+  message.channel.send(embed)
 }
 
 const handleVote = (message: Message) => {
