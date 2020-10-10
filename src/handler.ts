@@ -46,12 +46,11 @@ const handleVote = (message: Message) => {
 }
 
 const handlePack = async (message: Message) => {
+  // matches the uuid used in the pack url
   const packRe = /wavr\.me\/pack\/(\w+-\w+-\w+-\w+-\w+)/g
   const productId = packRe.exec(message.content)[1]!
 
   const product = await getProduct({ id: productId })
-
-  console.log(product)
 
   const embed = new Discord.MessageEmbed({
     title: product.name,
@@ -79,10 +78,10 @@ const handlePack = async (message: Message) => {
         name: 'Price:',
         value: `${
           product.onSale
-            ? `~~$${product.amount.toFixed(
-                2
-              )}~~\nOn sale: $${product.salePrice.toFixed(2)}`
-            : `$${product.amount.toFixed(2)}`
+            ? `~~$${product.amount.toFixed(2)}~~\nOn sale: $${
+                product.salePrice === 0 ? 'Free' : product.salePrice.toFixed(2)
+              }`
+            : `$${product.amount === 0 ? 'Free' : product.amount.toFixed(2)}`
         }`,
       },
       {
