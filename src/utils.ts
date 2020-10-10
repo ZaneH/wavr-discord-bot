@@ -12,3 +12,9 @@ export const noHTML = (str) => {
   const clean = str.replace(/<\/?[^>]+(>|$)/g, '')
   return clean
 }
+
+var emojis = ['ℹ️', '😄', '🎉', '😎', '❔', '💰', '🙏', '🐲', '🔥', '🔌', '✨']
+
+export const randomEmoji = () => {
+  return emojis[Math.floor(Math.random() * emojis.length)]
+}

@@ -1,7 +1,7 @@
 import * as Discord from 'discord.js'
 import { Message, MessageEmbed } from 'discord.js'
 import { getProduct } from './api'
-import { noHTML, truncateString } from './utils'
+import { noHTML, randomEmoji, truncateString } from './utils'
 
 const WAVR_EMOJI = '764397755828535306'
 
@@ -29,7 +29,7 @@ export const handleMessage = (message: Message) => {
 
 const handleHelp = (message: Message) => {
   const embed = new Discord.MessageEmbed({
-    title: 'Wavr bot Help',
+    title: `Wavr bot Help ${randomEmoji()}`,
     description: 'A companion bot for Wavr.me',
     color: 14035221,
     footer: {
@@ -54,7 +54,7 @@ const handleHelp = (message: Message) => {
 
 const handleVote = (message: Message) => {
   const embed = new Discord.MessageEmbed({
-    title: 'Vote for Wavr bot',
+    title: `Vote for Wavr bot ${randomEmoji()}`,
     description: 'Earn Ad Tokens for each vote!',
     color: 14035221,
     footer: {
