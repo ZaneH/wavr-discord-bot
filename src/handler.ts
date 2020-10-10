@@ -55,7 +55,7 @@ const handlePack = async (message: Message) => {
   const salePriceWithSign = `$${product.salePrice.toFixed(2)}`
   const embed = new Discord.MessageEmbed({
     title: product.name,
-    description: truncateString(noHTML(product.description) ?? '', 65),
+    description: truncateString(noHTML(product.description) ?? '', 45),
     url: `https://wavr.me/pack/${productId}`,
     color: 14035221,
     footer: {
