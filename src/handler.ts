@@ -46,7 +46,9 @@ const handleVote = (message: Message) => {
 }
 
 const handlePack = async (message: Message) => {
-  const productId = message.content.split('/').pop()
+  const packRe = /wavr\.me\/pack\/(\w+-\w+-\w+-\w+-\w+)/g
+  const productId = packRe.exec(message.content)[1]!
+
   const product = await getProduct({ id: productId })
 
   console.log(product)
