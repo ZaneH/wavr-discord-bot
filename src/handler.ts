@@ -56,7 +56,7 @@ const handleVote = (message: Message) => {
   const embed = new Discord.MessageEmbed({
     title: `Vote for Wavr bot ${randomEmoji()}`,
     description:
-      "Important: Your Discord must be connected to your Wavr account to earn tokens. Go to Dashboard -> Connected Accounts if you haven't already.",
+      "**Important:** Your Discord must be connected to your Wavr account to earn tokens. Go to Dashboard -> Connected Accounts if you haven't already.",
     color: 14035221,
     footer: {
       iconURL: 'https://wavr.me/img/w-sm-125.png',
