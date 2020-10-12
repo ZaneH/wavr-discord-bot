@@ -6,10 +6,10 @@ import { noHTML, randomEmoji, truncateString } from './utils'
 const WAVR_EMOJI = '764397755828535306'
 
 export const handleMessage = (message: Message) => {
-  const trimmedMessage = message.content.trim()
+  const trimmedMessage = message.content.trim().toLowerCase()
 
   // we should always embed links
-  if (message.content.indexOf('wavr.me/pack') >= 0) {
+  if (trimmedMessage.indexOf('wavr.me/pack') >= 0) {
     return handlePack(message)
   }
 
