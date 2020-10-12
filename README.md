@@ -14,3 +14,5 @@ Wavr is a digital marketplace for creators to upload and sell their content.<br 
 
 ## Invite Link
 If you want to invite Wavr bot to your own server <a href="https://discord.com/oauth2/authorize?client_id=762914158500511775&scope=bot&permissions=329728">Click here</a>
+
+Or join our server <a href="https://discord.gg/WAbvPjz">here</a>
